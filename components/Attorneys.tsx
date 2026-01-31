@@ -151,35 +151,6 @@ const Attorneys: React.FC = () => {
                     </div>
                 </div>
 
-                {/* Contact CTA */}
-                <div className="bg-gold-50 border border-gold-100 rounded-2xl p-8 md:p-10 text-center relative overflow-hidden">
-                     <div className="absolute -right-10 -top-10 w-40 h-40 bg-gold-200/50 rounded-full blur-3xl"></div>
-                     <div className="absolute -left-10 -bottom-10 w-40 h-40 bg-gold-200/50 rounded-full blur-3xl"></div>
-                     
-                     <div className="relative z-10">
-                         <h2 className="text-3xl font-serif font-bold text-navy-900 mb-4">
-                            {t('dontHesitate')}
-                         </h2>
-                         <p className="text-slate-600 mb-8 max-w-xl mx-auto text-xl md:text-2xl">
-                            {t('committedText')}
-                         </p>
-
-                         <a 
-                            href="tel:303-521-7671" 
-                            className="inline-flex items-center justify-center space-x-3 bg-navy-900 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-gold-500 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1"
-                         >
-                            <Phone size={20} />
-                            <span>303-521-7671</span>
-                         </a>
-                         
-                         <div className="mt-8 pt-6 border-t border-gold-200/60">
-                            <p className="text-lg text-slate-500 font-medium">
-                                {t('promiseTitle')}: {t('promiseText')}
-                            </p>
-                         </div>
-                     </div>
-                </div>
-
             </div>
         </div>
       </div>

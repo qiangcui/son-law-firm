@@ -33,12 +33,12 @@ const ContactForm: React.FC<ContactFormProps> = ({
   };
 
   return (
-    <section className="py-16 md:py-24 bg-gray-50 relative overflow-hidden" id="contact">
+    <section className="pt-[150px] pb-16 md:pb-24 bg-gray-50 relative overflow-hidden" id="contact">
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         
         <div className="max-w-6xl mx-auto bg-white rounded-3xl shadow-xl overflow-hidden flex flex-col lg:flex-row">
           
-          <div className="lg:w-5/12 bg-navy-900 text-white p-8 md:p-12 flex flex-col justify-between relative">
+          <div className="lg:w-5/12 bg-navy-900 text-white p-10 md:p-16 flex flex-col justify-center relative">
             
             <div className="relative z-10">
                 <h2 className="text-4xl md:text-5xl font-serif font-bold mb-8 text-white">{t('contactUs')}</h2>
@@ -52,7 +52,7 @@ const ContactForm: React.FC<ContactFormProps> = ({
                             <Phone size={26} />
                         </div>
                         <div>
-                            <h4 className="text-gold-500 font-bold uppercase text-sm tracking-widest mb-2">{t('call247')}</h4>
+                            <h4 className="text-gold-500 font-bold uppercase text-base tracking-widest mb-2">{t('call247')}</h4>
                             <a href="tel:303-521-7671" className="text-2xl font-display font-semibold hover:text-gold-400 transition-colors">303-521-7671</a>
                         </div>
                     </div>
@@ -62,7 +62,7 @@ const ContactForm: React.FC<ContactFormProps> = ({
                             <Mail size={26} />
                         </div>
                         <div>
-                            <h4 className="text-gold-500 font-bold uppercase text-sm tracking-widest mb-2">{t('emailUs')}</h4>
+                            <h4 className="text-gold-500 font-bold uppercase text-base tracking-widest mb-2">{t('emailUs')}</h4>
                             <a href="mailto:eyson.law@gmail.com" className="text-2xl font-display font-medium hover:text-gold-400 transition-colors break-all">eyson.law@gmail.com</a>
                         </div>
                     </div>
@@ -72,7 +72,7 @@ const ContactForm: React.FC<ContactFormProps> = ({
                             <MapPin size={26} />
                         </div>
                         <div>
-                            <h4 className="text-gold-500 font-bold uppercase text-sm tracking-widest mb-2">{t('visitOffice')}</h4>
+                            <h4 className="text-gold-500 font-bold uppercase text-base tracking-widest mb-2">{t('visitOffice')}</h4>
                             <p className="text-2xl text-gray-300 leading-snug font-display">
                                 3025 S. Parker Rd., Suite 705<br/>
                                 Aurora, CO 80014
@@ -90,7 +90,7 @@ const ContactForm: React.FC<ContactFormProps> = ({
                 </div>
             </div>
 
-            <div className="relative z-10 mt-12 pt-8 border-t border-white/10">
+            <div className="relative z-10 mt-8 pt-6 border-t border-white/10">
               <p className="text-sm text-gray-400 italic">
                 "We provide personal attention to every stage of a case."
               </p>
