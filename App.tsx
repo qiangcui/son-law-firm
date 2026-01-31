@@ -41,7 +41,7 @@ const HomePage = () => (
     <Hero />
     <CaseResults />
     <Testimonials />
-    <ContactForm />
+    <ContactForm isHomePage />
   </>
 );
 
