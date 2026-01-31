@@ -8,7 +8,7 @@ const Attorneys: React.FC = () => {
   const attorney = ATTORNEYS[language][0];
 
   return (
-    <section className="py-20 md:py-32 bg-white relative overflow-hidden">
+    <section className="pt-20 pb-10 md:py-32 bg-white relative overflow-hidden">
       {/* Decorative background elements */}
       <div className="absolute top-0 right-0 w-1/3 h-full bg-slate-50 -z-10 hidden lg:block"></div>
       <div className="absolute top-20 left-10 w-64 h-64 bg-gold-500/5 rounded-full blur-3xl -z-10"></div>

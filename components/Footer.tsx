@@ -22,7 +22,10 @@ const Footer: React.FC = () => {
                 <img 
                   src="https://sonlawfirmco.com/wp-content/uploads/2024/03/logo_02.png" 
                   alt="Son Law Firm" 
+                  width="160"
+                  height="160"
                   className="h-40 w-auto object-contain brightness-0 opacity-100"
+                  loading="lazy"
                 />
              </Link>
              
