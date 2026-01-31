@@ -65,7 +65,7 @@ const ContactForm: React.FC<ContactFormProps> = ({
   };
 
   return (
-    <section className="pt-[150px] pb-16 md:pb-24 bg-gray-50 relative overflow-hidden" id="contact">
+    <section className="pt-24 md:pt-[150px] pb-16 md:pb-24 bg-gray-50 relative overflow-hidden" id="contact">
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         
         <div className="max-w-6xl mx-auto bg-white rounded-3xl shadow-xl overflow-hidden flex flex-col lg:flex-row">
