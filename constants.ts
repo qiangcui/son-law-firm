@@ -28,52 +28,52 @@ const PRACTICE_AREAS_BASE = [
   {
     id: '1',
     icon: Car,
-    imageUrl: 'https://sonlawfirmco.com/wp-content/uploads/2024/03/01.jpg',
+    imageUrl: '/images/case-1.png',
   },
   {
     id: '2',
     icon: AlertTriangle,
-    imageUrl: 'https://sonlawfirmco.com/wp-content/uploads/2024/03/02.jpg',
+    imageUrl: '/images/case-2.png',
   },
   {
     id: '3',
     icon: Footprints,
-    imageUrl: 'https://sonlawfirmco.com/wp-content/uploads/2024/03/03.jpg',
+    imageUrl: '/images/case-3.png',
   },
   {
     id: '4',
     icon: Bike,
-    imageUrl: 'https://sonlawfirmco.com/wp-content/uploads/2024/03/04.jpg',
+    imageUrl: '/images/case-4.png',
   },
   {
     id: '5',
     icon: Gauge,
-    imageUrl: 'https://sonlawfirmco.com/wp-content/uploads/2024/03/05.jpg',
+    imageUrl: '/images/case-5.png',
   },
   {
     id: '6',
     icon: Smartphone,
-    imageUrl: 'https://sonlawfirmco.com/wp-content/uploads/2024/03/06.jpg',
+    imageUrl: '/images/case-6.png',
   },
   {
     id: '7',
     icon: Truck,
-    imageUrl: 'https://sonlawfirmco.com/wp-content/uploads/2024/03/07.jpg',
+    imageUrl: '/images/case-7.png',
   },
   {
     id: '8',
     icon: ArrowLeftRight,
-    imageUrl: 'https://sonlawfirmco.com/wp-content/uploads/2024/03/08.jpg',
+    imageUrl: '/images/case-8.png',
   },
   {
     id: '9',
     icon: Zap,
-    imageUrl: 'https://sonlawfirmco.com/wp-content/uploads/2024/03/09.jpg',
+    imageUrl: '/images/case-9.png',
   },
   {
     id: '10',
     icon: ShieldAlert,
-    imageUrl: 'https://sonlawfirmco.com/wp-content/uploads/2024/03/10.jpg',
+    imageUrl: '/images/case-10.png',
   }
 ];
 

@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
-import { Phone, Mail, MapPin, Send, ArrowRight } from 'lucide-react';
+import { Phone, Mail, MapPin, Send, ArrowRight, Loader2, CheckCircle } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
+
+// Google Apps Script Web App URL for form submission
+const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwahUBzdKIG51Aey7I_7_KnqWfGDoFHI6CFDmrjSKB4gk7KprDtinkHbX9uqTEdWjwHhQ/exec';
 
 interface ContactFormProps {
   title?: string;
@@ -21,11 +24,40 @@ const ContactForm: React.FC<ContactFormProps> = ({
     subject: '',
     message: ''
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
+  const [error, setError] = useState('');
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    alert(t('successMessage'));
-    setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
+    setIsSubmitting(true);
+    setError('');
+
+    try {
+      // Use URLSearchParams for proper form data encoding with Google Apps Script
+      const params = new URLSearchParams();
+      params.append('name', formData.name);
+      params.append('email', formData.email);
+      params.append('phone', formData.phone);
+      params.append('message', formData.message);
+
+      await fetch(APPS_SCRIPT_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        body: params,
+      });
+
+      // With no-cors mode, we can't read the response, but if it doesn't throw, assume success
+      setIsSuccess(true);
+      setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
+      
+      // Reset success state after 5 seconds
+      setTimeout(() => setIsSuccess(false), 5000);
+    } catch (err) {
+      setError('Failed to send message. Please try again or call us directly.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -157,13 +189,35 @@ const ContactForm: React.FC<ContactFormProps> = ({
               </div>
 
               <div className="pt-6">
-                <button
+                {error && (
+                  <div className="mb-4 p-4 bg-red-50 border border-red-200 text-red-700 rounded-lg text-center">
+                    {error}
+                  </div>
+                )}
+                {isSuccess ? (
+                  <div className="w-full bg-green-500 text-white font-bold py-5 rounded-lg flex items-center justify-center text-xl">
+                    <CheckCircle size={22} className="mr-2" />
+                    <span className="tracking-wide uppercase">{t('successMessage')}</span>
+                  </div>
+                ) : (
+                  <button
                     type="submit"
-                    className="w-full bg-navy-900 text-white font-bold py-5 rounded-lg hover:bg-gold-500 transition-all duration-300 shadow-lg hover:shadow-xl flex items-center justify-center group text-xl"
-                >
-                    <span className="tracking-wide uppercase">{t('sendBtn')}</span>
-                    <Send size={22} className="ml-2 group-hover:translate-x-1 transition-transform" />
-                </button>
+                    disabled={isSubmitting}
+                    className="w-full bg-navy-900 text-white font-bold py-5 rounded-lg hover:bg-gold-500 transition-all duration-300 shadow-lg hover:shadow-xl flex items-center justify-center group text-xl disabled:opacity-70 disabled:cursor-not-allowed"
+                  >
+                    {isSubmitting ? (
+                      <>
+                        <Loader2 size={22} className="mr-2 animate-spin" />
+                        <span className="tracking-wide uppercase">Sending...</span>
+                      </>
+                    ) : (
+                      <>
+                        <span className="tracking-wide uppercase">{t('sendBtn')}</span>
+                        <Send size={22} className="ml-2 group-hover:translate-x-1 transition-transform" />
+                      </>
+                    )}
+                  </button>
+                )}
               </div>
             </form>
           </div>

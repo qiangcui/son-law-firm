@@ -3,10 +3,9 @@ import { Phone } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 
 const HERO_IMAGES = [
-  "https://images.unsplash.com/photo-1589829085413-56de8ae18c73?auto=format&fit=crop&q=80&w=2070",
-  "https://images.unsplash.com/photo-1495511303866-2244bbd910dc?auto=format&fit=crop&q=80&w=2070",
-  "https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?auto=format&fit=crop&q=80&w=2069",
-  "https://images.unsplash.com/photo-1598418701078-654db4015697?auto=format&fit=crop&q=80&w=2070"
+  "/images/case-1.png",  // Car Accidents
+  "/images/case-9.png",  // Rear-End Collisions
+  "/images/case-4.png",  // Bicycle Accidents
 ];
 
 const Hero: React.FC = () => {
@@ -37,8 +36,8 @@ const Hero: React.FC = () => {
             className="w-full h-full object-cover object-center transform scale-105"
             loading={index === 0 ? "eager" : "lazy"}
           />
-          <div className="absolute inset-0 bg-neutral-900/70"></div>
-          <div className="absolute inset-0 bg-gradient-to-t from-neutral-900 via-transparent to-neutral-900/30"></div>
+          <div className="absolute inset-0 bg-neutral-900/80"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-neutral-900 via-neutral-900/20 to-neutral-900/40"></div>
         </div>
       ))}
 
