@@ -12,25 +12,26 @@ import { LanguageProvider } from './contexts/LanguageContext';
 // Get basename from Vite's base config (for GitHub Pages)
 const basename = import.meta.env.BASE_URL;
 
-// Scroll to top on route change with smooth behavior
+// Scroll to top on route change
 const ScrollToTop = () => {
   const { pathname, hash } = useLocation();
   
   React.useEffect(() => {
-    const handleScroll = () => {
-      if (hash) {
-        const id = hash.replace('#', '');
-        const element = document.getElementById(id);
-        if (element) {
+    // For hash links (anchors), scroll smoothly to the element
+    if (hash) {
+      const id = hash.replace('#', '');
+      const element = document.getElementById(id);
+      if (element) {
+        // Small delay to ensure page is rendered
+        setTimeout(() => {
           element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          return;
-        }
+        }, 100);
+        return;
       }
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    };
-
-    const timer = setTimeout(handleScroll, 10);
-    return () => clearTimeout(timer);
+    }
+    
+    // For page navigation, scroll to top instantly (CSS handles any smoothing needed)
+    window.scrollTo(0, 0);
   }, [pathname, hash]);
 
   return null;
