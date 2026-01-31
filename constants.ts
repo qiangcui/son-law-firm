@@ -24,56 +24,59 @@ export const NAV_ITEMS: Record<Language, NavItem[]> = {
   ]
 };
 
+// Use base URL for GitHub Pages compatibility
+const baseUrl = import.meta.env.BASE_URL;
+
 const PRACTICE_AREAS_BASE = [
   {
     id: '1',
     icon: Car,
-    imageUrl: '/images/case-1.png',
+    imageUrl: `${baseUrl}images/case-1.png`,
   },
   {
     id: '2',
     icon: AlertTriangle,
-    imageUrl: '/images/case-2.png',
+    imageUrl: `${baseUrl}images/case-2.png`,
   },
   {
     id: '3',
     icon: Footprints,
-    imageUrl: '/images/case-3.png',
+    imageUrl: `${baseUrl}images/case-3.png`,
   },
   {
     id: '4',
     icon: Bike,
-    imageUrl: '/images/case-4.png',
+    imageUrl: `${baseUrl}images/case-4.png`,
   },
   {
     id: '5',
     icon: Gauge,
-    imageUrl: '/images/case-5.png',
+    imageUrl: `${baseUrl}images/case-5.png`,
   },
   {
     id: '6',
     icon: Smartphone,
-    imageUrl: '/images/case-6.png',
+    imageUrl: `${baseUrl}images/case-6.png`,
   },
   {
     id: '7',
     icon: Truck,
-    imageUrl: '/images/case-7.png',
+    imageUrl: `${baseUrl}images/case-7.png`,
   },
   {
     id: '8',
     icon: ArrowLeftRight,
-    imageUrl: '/images/case-8.png',
+    imageUrl: `${baseUrl}images/case-8.png`,
   },
   {
     id: '9',
     icon: Zap,
-    imageUrl: '/images/case-9.png',
+    imageUrl: `${baseUrl}images/case-9.png`,
   },
   {
     id: '10',
     icon: ShieldAlert,
-    imageUrl: '/images/case-10.png',
+    imageUrl: `${baseUrl}images/case-10.png`,
   }
 ];
 

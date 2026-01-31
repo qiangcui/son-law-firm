@@ -2,10 +2,13 @@ import React, { useState, useEffect } from 'react';
 import { Phone } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 
+// Use base URL for GitHub Pages compatibility
+const baseUrl = import.meta.env.BASE_URL;
+
 const HERO_IMAGES = [
-  "/images/case-1.png",  // Car Accidents
-  "/images/case-9.png",  // Rear-End Collisions
-  "/images/case-4.png",  // Bicycle Accidents
+  `${baseUrl}images/case-1.png`,  // Car Accidents
+  `${baseUrl}images/case-9.png`,  // Rear-End Collisions
+  `${baseUrl}images/case-4.png`,  // Bicycle Accidents
 ];
 
 const Hero: React.FC = () => {
