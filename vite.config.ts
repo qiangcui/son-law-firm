@@ -4,9 +4,10 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig(({ mode }) => {
     const env = loadEnv(mode, '.', '');
+    // Use /son-law-firm/ for GitHub Pages, / for Vercel and local dev
+    const isGitHubPages = process.env.GITHUB_ACTIONS === 'true';
     return {
-      // Base URL for GitHub Pages - update 'son-law-firm' to match your repo name
-      base: mode === 'production' ? '/son-law-firm/' : '/',
+      base: isGitHubPages ? '/son-law-firm/' : '/',
       server: {
         port: 3000,
         host: '0.0.0.0',

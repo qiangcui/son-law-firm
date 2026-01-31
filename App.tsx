@@ -9,6 +9,9 @@ import ContactForm from './components/ContactForm';
 import Footer from './components/Footer';
 import { LanguageProvider } from './contexts/LanguageContext';
 
+// Get basename from Vite's base config (for GitHub Pages)
+const basename = import.meta.env.BASE_URL;
+
 // Scroll to top on route change with smooth behavior
 const ScrollToTop = () => {
   const { pathname, hash } = useLocation();
@@ -57,7 +60,7 @@ const ContactPage = () => (
 const App: React.FC = () => {
   return (
     <LanguageProvider>
-      <Router>
+      <Router basename={basename}>
         <ScrollToTop />
         <div className="min-h-screen bg-gray-50 text-slate-900 flex flex-col">
           <Header />
