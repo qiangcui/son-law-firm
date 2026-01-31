@@ -195,9 +195,20 @@ const ContactForm: React.FC<ContactFormProps> = ({
                   </div>
                 )}
                 {isSuccess ? (
-                  <div className="w-full bg-green-500 text-white font-bold py-5 rounded-lg flex items-center justify-center text-xl">
-                    <CheckCircle size={22} className="mr-2" />
-                    <span className="tracking-wide uppercase">{t('successMessage')}</span>
+                  <div className="text-center py-8 animate-fade-in">
+                    <div className="inline-flex items-center justify-center w-20 h-20 bg-green-100 rounded-full mb-6">
+                      <CheckCircle size={40} className="text-green-600" />
+                    </div>
+                    <h3 className="text-2xl font-bold text-navy-900 mb-3">Message Sent!</h3>
+                    <p className="text-gray-600 text-lg mb-6 max-w-sm mx-auto">
+                      Thank you for reaching out. We'll get back to you within 24 hours.
+                    </p>
+                    <div className="bg-gold-50 border border-gold-200 rounded-xl p-4 inline-block">
+                      <p className="text-sm text-gray-600 mb-1">Need immediate help?</p>
+                      <a href="tel:303-521-7671" className="text-xl font-bold text-navy-900 hover:text-gold-600 transition-colors">
+                        303-521-7671
+                      </a>
+                    </div>
                   </div>
                 ) : (
                   <button
