@@ -127,7 +127,7 @@ const Attorneys: React.FC = () => {
                 </p>
 
                 {/* Personal Note Card */}
-                <div className="bg-navy-900 rounded-2xl overflow-hidden shadow-2xl mb-16">
+                <div className="bg-navy-900 rounded-2xl overflow-hidden shadow-2xl mb-6 md:mb-16">
                     <div className="flex flex-col md:flex-row">
                         <div className="md:w-1/3 relative min-h-[300px] md:min-h-0">
                             <img 

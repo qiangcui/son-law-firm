@@ -92,7 +92,7 @@ const CaseResults: React.FC = () => {
             onClick={() => setSelectedCase(null)}
           ></div>
           
-          <div className="relative bg-white rounded-2xl w-full max-w-5xl max-h-[90vh] overflow-hidden shadow-2xl animate-fade-in-up flex flex-col md:flex-row">
+          <div className="relative bg-white rounded-2xl w-full max-w-5xl shadow-2xl animate-fade-in-up flex flex-col md:flex-row">
             <button 
                 onClick={() => setSelectedCase(null)}
                 className="absolute top-4 right-4 z-20 p-2 bg-white/50 hover:bg-white rounded-full text-navy-900 hover:text-red-500 transition-all backdrop-blur-md"
@@ -119,7 +119,7 @@ const CaseResults: React.FC = () => {
                 </div>
             </div>
 
-            <div className="md:w-1/2 p-8 md:p-10 bg-white flex flex-col overflow-y-auto">
+            <div className="md:w-1/2 p-8 md:p-10 bg-white flex flex-col">
                 <div className="mb-6">
                     <span className="text-gold-500 font-bold uppercase tracking-widest text-sm mb-2 block">{t('overview')}</span>
                     <p className="text-gray-600 text-xl md:text-2xl leading-relaxed">
